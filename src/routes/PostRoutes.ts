@@ -13,7 +13,7 @@ class PostRouter {​​​​​
         }​​​​​
 
         public async getPost(req: Request, res: Response): Promise<void> {​​​​​
-            const post = await Post.find({​​​​​ id: {​​​​​ $regex: req.params.id }​​​​​ }​​​​​);
+            const post = await Post.findById(req.params.id);
             res.json(post);
         }​​​​​
 

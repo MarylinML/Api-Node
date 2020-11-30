@@ -27,7 +27,7 @@ class PostRouter {
     }
     getPost(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const post = yield Post_1.default.find({ id: { $regex: req.params.id } });
+            const post = yield Post_1.default.findById(req.params.id);
             res.json(post);
         });
     }
